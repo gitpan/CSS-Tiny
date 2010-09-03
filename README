@@ -131,6 +131,23 @@ METHODS
     When an error occurs, you can retrieve the error message either from the
     $CSS::Tiny::errstr variable, or using the "errstr" method.
 
+CAVEATS
+  CSS Rule Order
+    While the order of rules in CSS is important, this is one of the
+    features that is sacrificed to keep things small and dependency-free. If
+    you need to preserve order yourself, we recommend that you upgrade to
+    the more powerful CSS module.
+
+    If this is not possible in your case, alternatively it can be done with
+    the help of another module such as Tie::IxHash:
+
+        my $css = CSS::Tiny->new;
+        tie %$css, 'Tie::IxHash';
+        $css->read('style.css');
+
+    Note: You will also need to remember to add the additional dependency to
+    your code or module in this case.
+
 SUPPORT
     Bugs should be reported via the CPAN bug tracker at
 
