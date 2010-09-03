@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               CSS-Tiny
-version:            1.17
+version:            1.18
 abstract:           Read/Write .css files with as little code as possible
 author:
     - Adam Kennedy <adamk@cpan.org>
